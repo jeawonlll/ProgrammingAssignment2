@@ -50,24 +50,24 @@ makeCacheMatrix <- function(x = numeric()) {
 } 
 
  
-50 
+
  
-51 # The following function calculates the inverse of a "special" matrix created with  
-52 # makeCacheMatrix 
-53 cacheSolve <- function(y, ...) { 
-54         # get the cached value 
-55         inverse <- y$getInverse() 
-56         # if a cached value exists return it 
-57         if(!is.null(inverse)) { 
-58                 message("getting cached data") 
-59                 return(inverse) 
-60         } 
-61         # otherwise get the matrix, caclulate the inverse and store it in 
-62         # the cache 
-63         data <- y$getMatrix() 
-64         inverse <- solve(data) 
-65         y$cacheInverse(inverse) 
-66          
-67         # return the inverse 
-68         inverse 
-69 } 
+# The following function calculates the inverse of a "special" matrix created with  
+# makeCacheMatrix 
+cacheSolve <- function(y, ...) { 
+       # get the cached value 
+       inverse <- y$getInverse() 
+       # if a cached value exists return it 
+       if(!is.null(inverse)) { 
+               message("getting cached data") 
+               return(inverse) 
+       } 
+       # otherwise get the matrix, caclulate the inverse and store it in 
+       # the cache 
+       data <- y$getMatrix() 
+       inverse <- solve(data) 
+       y$cacheInverse(inverse) 
+        
+       # return the inverse 
+       inverse 
+} 
